@@ -1,0 +1,39 @@
+
+RewriteEngine On
+
+# 2. Примусове перенаправлення з HTTP на безпечний HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Чисті URL-адреси (прибираємо .html з кінця посилань)
+# Щоб посилання виглядало як /catalog замість /catalog.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+# 4. Власна сторінка помилки
+# Якщо клієнт перейде за неіснуючим посиланням, йому покаже нашу фірмову сторінку
+ErrorDocument 404 /404.html
+
+# 5. Кешування файлів у браузері (Для максимальних балів у Google PageSpeed)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Кешуємо фотографії парфумів на 1 рік (вони рідко змінюються)
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    
+    # Кешуємо стилі на 1 місяць
+    ExpiresByType text/css "access plus 1 month"
+    
+    # HTML файли кешуємо лише на 1 годину, щоб клієнти бачили оновлення цін/асортименту
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# 6. Захист файлу .htaccess від перегляду хакерами
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
