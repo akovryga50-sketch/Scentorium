@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scentorium - Каталог ароматів</title>
+    <title>Каталог ароматів — Scentorium | Купити нішевий парфум</title>
+    <meta name="description" content="Повний асортимент авангардної парфумерії. Фільтр за брендами: Unum, Epico, Genyum. Доставка по Україні.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .catalog-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 5%;
+            display: flex;
+            gap: 40px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #111;
+            padding: 25px;
+            border: 1px solid #333;
+            height: fit-content;
+        }
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        .filter-group h3 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .filter-list {
+            list-style: none;
+            color: #aaa;
+            font-size: 14px;
+        }
+        .filter-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .filter-list li:hover {
+            color: #fff;
+        }
+        .catalog-main {
+            flex: 1;
+        }
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .catalog-header select {
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 8px 15px;
+            outline: none;
+        }
+        
+        /* Стиль для локальних фотографій парфумів */
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain; /* Зберігає пропорції флаконів */
+            background-color: #f8f8f8; /* Легкий світлий фон для контрасту з флаконами */
+            padding: 15px;
+            border: 1px solid #222;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-links">
+            <a href="index.html">Головна</a>
+            <a href="catalog.html" style="color: #fff; border-bottom: 1px solid #fff;">Каталог</a>
+            <a href="about.html">Про магазин (Автора)</a>
+            <a href="delivery.html">Оплата та доставка</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+        <div class="top-actions">
+            <span class="lang-switch">UA | EN</span>
+            <a href="#" class="account-link">Особистий кабінет</a>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="color: white;">SCENTORIUM</a></div>
+        <div class="search-cart">
+            <div class="search-box">
+                <input type="text" placeholder="Пошук ароматів...">
+                <button type="submit">Знайти</button>
+            </div>
+            <button class="cart-btn">Кошик: 0 грн</button>
+        </div>
+    </header>
+
+    <div class="catalog-container">
+        
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h3>Бренди</h3>
+                <ul class="filter-list">
+                    <li>Astrophil & Stella</li>
+                    <li>Marc-Antoine Barrois</li>
+                    <li>Essential Parfums</li>
+                    <li>Filippo Sorcinelli</li>
+                    <li>Epico</li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Сімейство ароматів</h3>
+                <ul class="filter-list">
+                    <li>Деревні</li>
+                    <li>Мінеральні</li>
+                    <li>Східні</li>
+                    <li>Гурманські</li>
+                    <li>Шкіряні</li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Стать</h3>
+                <ul class="filter-list">
+                    <li>Унісекс</li>
+                    <li>Для неї</li>
+                    <li>Для нього</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="catalog-main">
+            <div class="catalog-header">
+                <h2>Всі аромати (12 товарів)</h2>
+                <select>
+                    <option>За популярністю</option>
+                    <option>Від дешевих до дорогих</option>
+                    <option>Від дорогих до дешевих</option>
+                    <option>Новинки</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <img src="images/boisimperial.jpg" alt="Bois Impérial" class="product-image">
+                    <h3 class="product-name">Bois Impérial</h3>
+                    <p class="product-brand">Essential Parfums</p>
+                    <p class="product-price">4 500 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/ganymede.jpg" alt="Ganymede" class="product-image">
+                    <h3 class="product-name">Ganymede</h3>
+                    <p class="product-brand">Marc-Antoine Barrois</p>
+                    <p class="product-price">9 800 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/mellowyellow.jpg" alt="Mellow Yellow" class="product-image">
+                    <h3 class="product-name">Mellow Yellow</h3>
+                    <p class="product-brand">Astrophil & Stella</p>
+                    <p class="product-price">6 200 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/b683.jpg" alt="B683" class="product-image">
+                    <h3 class="product-name">B683</h3>
+                    <p class="product-brand">Marc-Antoine Barrois</p>
+                    <p class="product-price">8 900 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/unum_but_not_today_.jpg" alt="But Not Today" class="product-image">
+                    <h3 class="product-name">But Not Today</h3>
+                    <p class="product-brand">Filippo Sorcinelli (Unum)</p>
+                    <p class="product-price">11 200 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/nice_bergamote.jpg" alt="Nice Bergamote" class="product-image">
+                    <h3 class="product-name">Nice Bergamote</h3>
+                    <p class="product-brand">Essential Parfums</p>
+                    <p class="product-price">4 500 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/oceano_viola.jpg" alt="Oceano Viola" class="product-image">
+                    <h3 class="product-name">Oceano Viola</h3>
+                    <p class="product-brand">Filippo Sorcinelli</p>
+                    <p class="product-price">11 200 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/encelade.jpg" alt="Encelade" class="product-image">
+                    <h3 class="product-name">Encelade</h3>
+                    <p class="product-brand">Marc-Antoine Barrois</p>
+                    <p class="product-price">9 500 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/golden_pistachio.jpg" alt="Golden Pistachio" class="product-image">
+                    <h3 class="product-name">Golden Pistachio</h3>
+                    <p class="product-brand">Epico</p>
+                    <p class="product-price">6 240 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/divine_vanille.jpg" alt="Divine Vanille" class="product-image">
+                    <h3 class="product-name">Divine Vanille</h3>
+                    <p class="product-brand">Essential Parfums</p>
+                    <p class="product-price">4 500 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/black_sesame.jpg" alt="Black Sesame" class="product-image">
+                    <h3 class="product-name">Black Sesame</h3>
+                    <p class="product-brand">Epico</p>
+                    <p class="product-price">6 240 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/cumbawa_wood.jpg" alt="Cumbawa Wood" class="product-image">
+                    <h3 class="product-name">Cumbawa Wood</h3>
+                    <p class="product-brand">Epico</p>
+                    <p class="product-price">6 240 грн.</p>
+                    <button class="buy-btn">До кошика</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-columns">
+            <div class="footer-col about-col">
+                <div class="footer-logo">SCENTORIUM</div>
+                <p>У світі, де запахи здатні викликати найглибші спогади, ми перетворюємо кожен флакон на історію.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Категорії</h4>
+                <ul>
+                    <li><a href="#">Акції</a></li>
+                    <li><a href="#">Новинки</a></li>
+                    <li><a href="catalog.html">Нішева парфумерія</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Інформація</h4>
+                <ul>
+                    <li><a href="about.html">Про магазин</a></li>
+                    <li><a href="delivery.html">Оплата та доставка</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Scentorium. Всі права захищені.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

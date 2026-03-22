@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scentorium - Про автора</title>
+    <meta name="description" content="Резюме автора сайту та інформація про захоплення">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стилі спеціально для сторінки контенту */
+        .content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #111;
+            border: 1px solid #333;
+            line-height: 1.6;
+        }
+        .bilingual-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .bilingual-block div {
+            flex: 1;
+        }
+        .en-text {
+            color: #888;
+            font-style: italic;
+        }
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .content-table th, .content-table td {
+            border: 1px solid #444;
+            padding: 12px;
+            text-align: left;
+        }
+        .content-table th {
+            background-color: #222;
+            color: #fff;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 1px solid #444;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            padding: 15px;
+            background-color: #222;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: 1px solid #444;
+        }
+        .back-to-top:hover {
+            background-color: #333;
+        }
+        /* Оформлення змісту */
+        .toc-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #fff;
+        }
+    </style>
+</head>
+<body id="top">
+
+    <div class="top-bar">
+        <div class="top-links">
+            <a href="about.html">Про магазин (Автора)</a>
+            <a href="delivery.html">Оплата та доставка</a>
+            <a href="blog.html">Блог</a>
+            <a href="contacts.html">Контакти</a>
+        </div>
+        <div class="top-actions">
+            <span class="lang-switch">UA | EN</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="color: white;">SCENTORIUM</a></div>
+        <div class="contact-block">
+            <span class="phone">+380 (67) 000 0000 </span>
+            <span class="email">info@scentorium.com.ua</span>
+        </div>
+    </header>
+
+    <div class="content-container">
+        
+        <h1>Про автора сайту</h1>
+
+        <div class="toc-box">
+            <h2>Зміст</h2>
+            <ul style="list-style-type: square; margin-left: 20px;">
+                <li><a href="#resume">1. Особиста інформація та Резюме</a></li>
+                <li><a href="#experience">2. Професійний досвід</a></li>
+                <li><a href="#hobbies">3. Захоплення та Хобі</a></li>
+            </ul>
+        </div>
+
+        <h2 id="resume">1. Особиста інформація</h2>
+        <div class="bilingual-block">
+            <div>
+                <p>Мене звати <strong>Олександр</strong>, мені 18 років. Я проживаю в місті Дніпро та є студентом <i>Дніпровського інституту інфраструктури і транспорту </i>.</p>
+                <p>Моя мета — поєднати технічні навички з креативним підходом до електронної комерції та створення сучасних веб-сайтів.</p>
+            </div>
+            <div class="en-text">
+                <p>My name is <strong>Alex</strong>, I am 18 years old. I live in Dnipro and I am a student at the <i>Dnipro Institute of Railway Transport Engineers (DIIT)</i>.</p>
+                <p>My goal is to combine technical skills with a creative approach to e-commerce and modern website creation.</p>
+            </div>
+        </div>
+
+        <h2 id="experience">2. Професійний досвід</h2>
+        <p>Наразі я працюю в сфері рітейлу ексклюзивної нішевої парфумерії, де займаюся створенням контенту, маркетингом та вивченням хімічного складу ароматів.</p>
+        
+        <table class="content-table">
+            <tr>
+                <th>Місце роботи / Workplace</th>
+                <th>Посада / Position</th>
+                <th>Основні навички / Core Skills</th>
+            </tr>
+            <tr>
+                <td>Бутик нішевої парфумерії <b>"Fragranza"</b></td>
+                <td>Контент-менеджер, Адміністратор-консультант </td>
+                <td>
+                    <ol>
+                        <li> Створення контент-плану для соцмереж </li>
+                        <li> Аналіз парфумерних композицій </li>
+                        <li> Підбір індивідуального парфумерного гардеробу </li>
+                    </ol>
+                </td>
+            </tr>
+          
+        </table>
+
+        <h2 id="hobbies">3. Захоплення та Хобі</h2>
+        
+        <h3>Нішева парфумерія</h3>
+        <p>Я глибоко досліджую світ концептуальних ароматів. Мій улюблений бренд — <span style="color: #d4af37; font-size: 1.1em; font-family: 'Georgia', serif;">Astrophil & Stella</span>. Це справжнє мистецтво, яке виходить за рамки звичайних запахів, де кожна нота розкривається як окрема історія.</p>
+        
+        <h3>Спорт та Фітнес</h3>
+        <div class="bilingual-block">
+            <div>
+                <p>Регулярні тренування в залі, побудова ідеальної статури — це моя дисципліна. Тренування вимагають системного підходу.</p>
+            </div>
+        </div>
+
+        <h3>Галерея</h3>
+        <div class="gallery-grid">
+            <img src="images/astrophil.jpg" alt="Моє перше фото" class="gallery-img">
+            <img src="images/zal.jpg" alt="Моє друге фото" class="gallery-img">
+        </div>
+
+        <a href="#top" class="back-to-top">↑ Повернутися нагору</a>
+
+    </div>
+
+</body>
+</html>

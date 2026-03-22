@@ -1,0 +1,305 @@
+/* Базові налаштування */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a0a0a0;
+}
+
+/* Верхня панель (Top Bar) */
+.top-bar {
+    background-color: #1a1a1a;
+    padding: 8px 5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+}
+
+.top-links {
+    display: flex;
+    gap: 20px;
+}
+
+.top-actions {
+    display: flex;
+    gap: 20px;
+}
+
+/* Основна шапка (Header) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    background-color: #111;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+}
+
+.contact-block .phone {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.search-cart {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    padding: 10px 15px;
+    border: 1px solid #444;
+    background-color: #000;
+    color: #fff;
+    width: 200px;
+    outline: none;
+}
+
+.search-box button, .cart-btn, .buy-btn {
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.search-box button:hover, .cart-btn:hover, .buy-btn:hover {
+    background-color: #444;
+}
+
+/* Головне навігаційне меню */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    background-color: #0a0a0a;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.main-nav a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+/* Головний банер з фоном */
+.hero-banner {
+    height: 450px;
+    /* Тут додано фонове зображення з затемненням */
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)),url('images/monochrom.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #dcdcdc;
+    max-width: 600px;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.action-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Секції */
+.brands-section, .products-section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Сітка Брендів */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.brand-item {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.brand-item:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+
+/* Сітка Товарів */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+/* Стилі для фотографій парфумів */
+.product-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Щоб фото пропорційно заповнювало блок */
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.product-brand {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Підвал */
+.main-footer {
+    background-color: #050505;
+    padding: 50px 5% 20px;
+    border-top: 1px solid #222;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.about-col p {
+    color: #888;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 14px;
+}
