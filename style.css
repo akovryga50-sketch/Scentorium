@@ -1,14 +1,41 @@
-/* Базові налаштування */
+/* ==========================================================================
+   SCENTORIUM - CSS Style Guide
+   ========================================================================== */
+
+/* 1. CSS Змінні (Custom Properties) - для легкого управління кольорами */
+:root {
+    --bg-dark: #0a0a0a;          /* Основний темний фон */
+    --bg-panel: #111111;         /* Фон для панелей та карток */
+    --bg-header: rgba(10, 10, 10, 0.95); /* Напівпрозорий фон шапки */
+    
+    --text-main: #ffffff;        /* Основний текст (білий) */
+    --text-muted: #888888;       /* Другорядний текст (сірий) */
+    
+    --accent-gold: #d4af37;      /* Вінтажне золото (Акцент) */
+    --accent-hover: #f1c40f;     /* Світліше золото при наведенні */
+    
+    --border-color: #333333;     /* Колір рамок */
+    
+    --font-main: 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'Georgia', serif; /* Шрифт із зарубками для преміальності */
+}
+
+/* 2. Базові налаштування (Скидання стилів) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    background-image: url('images/monochrom.jpg'); /* Темна текстура на фон */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 a {
@@ -18,163 +45,191 @@ a {
 }
 
 a:hover {
-    color: #a0a0a0;
+    color: var(--accent-gold);
 }
 
-/* Верхня панель (Top Bar) */
+/* 3. Верхня панель (Top Bar) */
 .top-bar {
-    background-color: #1a1a1a;
-    padding: 8px 5%;
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    border-bottom: 1px solid #333;
+    padding: 10px 5%;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 12px;
+    color: var(--text-muted);
 }
 
-.top-links {
-    display: flex;
-    gap: 20px;
+.top-links a {
+    margin-right: 20px;
 }
 
-.top-actions {
-    display: flex;
-    gap: 20px;
+.top-links a:hover, 
+.account-link:hover {
+    color: var(--text-main);
 }
 
-/* Основна шапка (Header) */
+.lang-switch {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* 4. Головна Шапка (Header) */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
-    background-color: #111;
+    padding: 20px 5%;
+    background-color: var(--bg-header);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.logo {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #fff;
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: var(--text-main);
+    font-family: var(--font-heading);
 }
 
 .contact-block {
     display: flex;
     flex-direction: column;
-    text-align: center;
     font-size: 14px;
-}
-
-.contact-block .phone {
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 5px;
 }
 
 .search-cart {
     display: flex;
-    gap: 15px;
     align-items: center;
-}
-
-.search-box {
-    display: flex;
+    gap: 15px;
 }
 
 .search-box input {
-    padding: 10px 15px;
-    border: 1px solid #444;
-    background-color: #000;
-    color: #fff;
-    width: 200px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 8px 12px;
     outline: none;
 }
 
-.search-box button, .cart-btn, .buy-btn {
-    padding: 10px 20px;
-    background-color: #2a2a2a;
-    color: #fff;
-    border: 1px solid #444;
+.search-box button, 
+.cart-btn {
+    background-color: var(--bg-panel);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
     cursor: pointer;
-    font-weight: 500;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
-.search-box button:hover, .cart-btn:hover, .buy-btn:hover {
-    background-color: #444;
+.search-box button:hover, 
+.cart-btn:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    border-color: var(--accent-gold);
 }
 
-/* Головне навігаційне меню */
+/* 5. Навігаційне меню */
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     padding: 15px 0;
-    background-color: #0a0a0a;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    text-transform: uppercase;
+    background-color: var(--bg-panel);
+    border-bottom: 1px solid var(--border-color);
     font-size: 14px;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .main-nav a:hover {
-    color: #fff;
-    border-bottom: 1px solid #fff;
+    color: var(--accent-gold);
 }
 
-/* Головний банер з фоном */
+/* 6. Головний банер (Hero Section) */
 .hero-banner {
-    height: 450px;
-    /* Тут додано фонове зображення з затемненням */
-    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)),url('images/monochrom.jpg') center/cover no-repeat;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-bottom: 1px solid #333;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/hero-bg.jpg') center/cover;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero-content h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-    color: #fff;
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
     letter-spacing: 2px;
 }
 
 .hero-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
-    color: #dcdcdc;
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
     max-width: 600px;
 }
 
 .action-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+    padding: 15px 30px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 .action-btn:hover {
-    background-color: #ccc;
-    color: #000;
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
 }
 
-/* Секції */
-.brands-section, .products-section {
+/* 7. Секція Брендів */
+.brands-section {
     padding: 60px 5%;
+    text-align: center;
 }
 
 .section-title {
     font-size: 24px;
-    text-transform: uppercase;
+    margin-bottom: 40px;
     letter-spacing: 2px;
-    margin-bottom: 30px;
-    color: #fff;
-    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-main);
+    display: inline-block;
+    border-bottom: 2px solid var(--accent-gold); /* Золотий акцент */
+    padding-bottom: 10px;
+}
+
+.brands-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand-item {
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    background-color: var(--bg-panel);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+.brand-item:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+/* 8. Сітка Товарів (Products) */
+.products-section {
+    padding: 0 5% 60px;
 }
 
 .section-header {
@@ -184,108 +239,188 @@ a:hover {
     margin-bottom: 30px;
 }
 
-/* Сітка Брендів */
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
-}
-
-.brand-item {
-    background-color: #1a1a1a;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #333;
+.view-all {
+    color: var(--text-muted);
     font-size: 14px;
-    letter-spacing: 1px;
-    transition: background 0.3s;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
 }
 
-.brand-item:hover {
-    background-color: #2a2a2a;
-    cursor: pointer;
+.view-all:hover {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
 }
 
-/* Сітка Товарів */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .product-card {
-    background-color: #111;
-    border: 1px solid #222;
+    background-color: var(--bg-panel);
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
+    border-color: var(--border-color);
     transform: translateY(-5px);
-    border-color: #555;
 }
 
-/* Стилі для фотографій парфумів */
 .product-image {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Щоб фото пропорційно заповнювало блок */
-    margin-bottom: 20px;
-    border-radius: 2px;
+    height: 320px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    filter: grayscale(20%) contrast(110%);
+    transition: filter 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    filter: grayscale(0%) contrast(100%);
 }
 
 .product-name {
     font-size: 18px;
-    color: #fff;
     margin-bottom: 5px;
+    font-family: var(--font-heading);
 }
 
 .product-brand {
+    color: var(--text-muted);
     font-size: 14px;
-    color: #888;
     margin-bottom: 15px;
 }
 
 .product-price {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: var(--accent-gold); /* Золота ціна */
 }
 
-/* Підвал */
+.buy-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+}
+
+/* 9. Сторінка Каталогу (Бокова панель та Фільтри) */
+.catalog-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 5%;
+    display: flex;
+    gap: 40px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-panel);
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    color: var(--text-main);
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.filter-list {
+    list-style: none;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.filter-list li:hover {
+    color: var(--accent-gold);
+}
+
+.catalog-main {
+    flex: 1;
+}
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    color: var(--text-main);
+}
+
+.catalog-header select {
+    background-color: var(--bg-panel);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 10. Підвал (Footer) */
 .main-footer {
     background-color: #050505;
-    padding: 50px 5% 20px;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-color);
+    padding: 60px 5% 20px;
+    margin-top: 60px;
 }
 
 .footer-columns {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
-    letter-spacing: 2px;
-    color: #fff;
+    letter-spacing: 3px;
     margin-bottom: 15px;
+    font-family: var(--font-heading);
 }
 
 .about-col p {
-    color: #888;
-    line-height: 1.6;
+    color: var(--text-muted);
+    font-size: 14px;
     max-width: 300px;
-}
-
-.footer-col h4 {
-    color: #fff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .footer-col ul {
@@ -296,10 +431,41 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.footer-col a {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.footer-col a:hover {
+    color: var(--accent-gold);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #222;
-    color: #666;
-    font-size: 14px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* 11. Адаптивність (Responsive Design для мобільних) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .catalog-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
 }
